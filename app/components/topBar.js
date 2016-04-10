@@ -1,11 +1,14 @@
 /**
  * Created by martynasjankauskas on 10/04/16.
  */
-app.controller('TopBarController', function($scope) {
-   $scope.brand = 'IMDB'
-});
 
-app.component('topBar', {
-   templateUrl: './components/topBar.html',
+angular.module('app')
+
+.controller('TopBarController', function($scope) {
+   $scope.brand = 'IMDB'
+})
+
+.component('topBar', {
+   templateUrl: 'app/components/topBar.html',
    controller: "TopBarController"
-});
+})

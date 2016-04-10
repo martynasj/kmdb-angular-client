@@ -1,21 +1,24 @@
 /**
  * Created by martynasjankauskas on 10/04/16.
  */
-const dummyData = [
-    {title: 'Some title', year: '2008', director: 'Alex Morgan'},
-    {title: 'Some title', year: '2008', director: 'Alex Morgan'},
-    {title: 'Some title', year: '2008', director: 'Alex Morgan'},
-    {title: 'Some title', year: '2008', director: 'Alex Morgan'},
-    {title: 'Some title', year: '2008', director: 'Alex Morgan'},
-    {title: 'Some title', year: '2008', director: 'Alex Morgan'},
-    {title: 'Some title', year: '2008', director: 'Alex Morgan'},
-];
+angular.module('moviePage')
 
-app.controller('MovieListController', function($scope) {
+.component('movieList', {
+    templateUrl: '/app/components/movieList.html',
+    controller: MovieListController
+});
+
+function MovieListController($scope) {
+    const dummyData = [
+        {id: '1', title: 'Some title', year: '2008', director: 'Alex Morgan'},
+        {id: '2', title: 'Some title', year: '2008', director: 'Alex Morgan'},
+        {id: '3', title: 'Some title', year: '2008', director: 'Alex Morgan'},
+        {id: '4', title: 'Some title', year: '2008', director: 'Alex Morgan'},
+        {id: '5', title: 'Some title', year: '2008', director: 'Alex Morgan'},
+        {id: '6', title: 'Some title', year: '2008', director: 'Alex Morgan'},
+        {id: '7', title: 'Some title', year: '2008', director: 'Alex Morgan'},
+    ];
+
     $scope.movies = dummyData;
-});
+}
 
-app.component('movieList', {
-    templateUrl: './components/movieList.html',
-    controller: 'MovieListController'
-});

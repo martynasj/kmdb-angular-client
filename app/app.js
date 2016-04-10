@@ -1,9 +1,20 @@
 /**
  * Created by martynasjankauskas on 10/04/16.
  */
-var app = angular.module('imdb', []);
+angular.module('app', ['ngComponentRouter', 'moviePage'])
 
-app.controller('mainController', function($scope) {
-    $scope.pageTitle = 'KEA movie database';
-});
+// https://docs.angularjs.org/guide/component-router
+.config(function($locationProvider) {
+    $locationProvider.html5Mode(true);
+})
 
+// Configure the top level routed App Component.
+.value('$routerRootComponent', 'app')
+
+.component('app', {
+    templateUrl: './app/app.html',
+    $routeConfig: [
+        {path: '/movies', name: 'Movies', component: 'moviePage'},
+        {path: '/add', name: 'AddMovie', component: 'addMovie'},
+    ]
+})
