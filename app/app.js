@@ -14,7 +14,11 @@ angular.module('app', ['ngComponentRouter', 'moviePage'])
 .component('app', {
     templateUrl: './app/app.html',
     $routeConfig: [
-        {path: '/movies', name: 'Movies', component: 'moviePage'},
-        {path: '/add', name: 'AddMovie', component: 'addMovie'},
+        {path: '/movies/...', name: 'Movies', component: 'moviePage'},
+        {path: '/home', name: 'Home', component: 'home'},
     ]
 })
+
+.component('home', {
+    templateUrl: '/app/pages/home.html'
+});
