@@ -5,7 +5,7 @@
 angular.module('app')
 
 .controller('TopBarController', function($scope) {
-   $scope.brand = 'IMDB'
+   $scope.brand = 'KMDB'
 })
 
 .component('topBar', {

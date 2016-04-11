@@ -16,9 +16,5 @@ angular.module('moviePage', [])
     template: 'no movie selected'
 })
 
-.component('addMovie', {
-    templateUrl: 'app/pages/addMovie.html'
-})
-
 
 
