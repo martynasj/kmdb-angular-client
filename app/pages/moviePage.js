@@ -1,6 +1,4 @@
-/**
- * Created by martynasjankauskas on 10/04/16.
- */
+console.log('in moviepage.js');
 
 angular.module('moviePage', [])
 

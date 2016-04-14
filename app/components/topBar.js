@@ -1,8 +1,9 @@
 /**
  * Created by martynasjankauskas on 10/04/16.
  */
+import angular from 'angular';
 
-angular.module('app')
+export default angular.module('topBar')
 
 .controller('TopBarController', function($scope) {
    $scope.brand = 'KMDB'
