@@ -1,15 +1,17 @@
 /**
  * Created by martynasjankauskas on 10/04/16.
  */
-import angular from 'angular';
+import app from '../app';
+import template from './topBar.html';
 
-export default angular.module('topBar')
-
-.controller('TopBarController', function($scope) {
+function controller($scope) {
    $scope.brand = 'KMDB'
-})
+}
 
-.component('topBar', {
-   templateUrl: 'app/components/topBar.html',
-   controller: "TopBarController"
-})
+const TopBar = app.component('topBar', {
+   template,
+   controller
+});
+
+export default TopBar;
+

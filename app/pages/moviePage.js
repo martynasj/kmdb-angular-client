@@ -1,18 +1,11 @@
-console.log('in moviepage.js');
+console.log('in moviePage.js');
+import app from '../MainLayout';
 
-angular.module('moviePage', [])
+const moviePage = app.component('moviePage', {
+        template: 'moviePage.js',
+    });
 
-.component('moviePage', {
-    templateUrl: 'app/pages/moviePage.html',
-    $routeConfig: [
-        {path: '/', component: 'noMovie', useAsDefault: true},
-        {path: '/:id', name: 'MovieDetail', component: 'movieDetail'}
-    ]
-})
-
-.component('noMovie', {
-    template: 'no movie selected'
-})
+export default moviePage;
 
 
 
