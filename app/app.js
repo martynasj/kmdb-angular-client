@@ -2,5 +2,15 @@
 // All other components then build on this module
 
 import angular from 'angular';
-export default angular.module('app', []);
+import ngComponentRouter from 'ngcomponentrouter';
+
+const app = angular.module('app', ['ngComponentRouter']);
+
+app.config(function($locationProvider) {
+    $locationProvider.html5Mode(true);
+});
+
+
+
+export default app;
 console.log('angular module crated');

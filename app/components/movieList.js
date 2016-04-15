@@ -1,16 +1,21 @@
 /**
  * Created by martynasjankauskas on 10/04/16.
  */
-angular.module('moviePage')
+import app from '../app';
+import template from './movieList.html';
+import { movieData } from '../dummyData';
 
-.component('movieList', {
-    templateUrl: '/app/components/movieList.html',
-    controller: MovieListController
+function controller($scope) {
+    $scope.movies = movieData;
+}
+
+const movieList = app.component('movieList', {
+    template,
+    controller,
+
 });
 
-function MovieListController($scope) {
+export default movieList;
 
 
-    $scope.movies = dummyData;
-}
 

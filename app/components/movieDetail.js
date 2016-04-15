@@ -1,17 +1,30 @@
 /**
  * Created by martynasjankauskas on 11/04/16.
  */
-function MovieDetailController($scope) {
-    $ctrl = this;
+import app from '../app';
+import template from './movieDetail.html';
+import { movieData } from '../dummyData';
+
+function controller() {
+
+    const $ctrl = this;
+
     this.$routerOnActivate = function(next, previous) {
         // Get the hero identified by the route parameter
-        var id = next.params.id;
-        $ctrl.id = id;
+        var routeId = next.params.id;
+
+        for (const movie of movieData) {
+            if (movie.id === routeId) {
+                $ctrl.movie = JSON.stringify(movie, null, 2);
+            }
+        }
+
     };
 }
 
-angular.module('moviePage')
-    .component('movieDetail', {
-        templateUrl: '/app/components/movieDetail.html',
-        controller: MovieDetailController
-    });
+const movieDetail = app.component('movieDetail', {
+    template,
+    controller
+});
+
+export default movieDetail;
