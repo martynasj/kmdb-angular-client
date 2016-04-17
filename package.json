@@ -12,6 +12,7 @@
     "@angular/router": "^0.2.0",
     "angular": "^1.5.3",
     "angular-ui-router": "^0.2.18",
+    "materialize-css": "^0.97.6",
     "ngcomponentrouter": "^2.1.0"
   },
   "devDependencies": {

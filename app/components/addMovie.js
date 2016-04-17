@@ -2,6 +2,7 @@
  * Created by martynasjankauskas on 11/04/16.
  */
 import app from '../app';
+import { movieData } from '../dummyData';
 
 function controller() {
 
@@ -11,7 +12,7 @@ function controller() {
 
     this.save = function() {
         this.validatedMovie = this.movie;
-        dummyData.push(this.validatedMovie);
+        movieData.push(this.validatedMovie);
     };
 
     this.reset = function() {
@@ -21,43 +22,61 @@ function controller() {
 }
 
 const template = `
-<div>
-    <form novalidate>
+<div class="row">
 
-        <div class="form-group">
-            <label>Movie Title</label>
-            <input class="form-control" type="text" ng-model="$ctrl.movie.title" placeholder="Movie title" />
+  <div class="col s12">
+    <h1>Add Movie</h1>
+  </div>
+
+    <form class="col s12">
+
+      <div class="row">
+      <div class="input-field col s12">
+          <label for="movie_title">Movie Title</label>
+            <input id="movie_title" class="validate" type="text" ng-model="$ctrl.movie.title" />
         </div>
+      </div>
 
-        <div class="form-group">
-            <label>Release Year</label>
-            <input class="form-control" type="text" ng-model="$ctrl.movie.year" placeholder="Year" />
+      <div class="row">
+        <div class="input-field col s12">
+            <label for="movie_year">Year</label>
+            <input id="movie_year" class="validate" type="text" ng-model="$ctrl.movie.year" />
         </div>
+      </div>
 
-        <div class="form-group">
-            <label>Director</label>
-            <input class="form-control" type="text" ng-model="$ctrl.movie.director" placeholder="Quentin Tarantino" />
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="movie_director">Director</label>
+            <input id="movie_director" class="validate" type="text" ng-model="$ctrl.movie.director" />
         </div>
+      </div>
 
-        <div class="form-group">
-            <label>Rating</label>
-            <input class="form-control" type="text" ng-model="$ctrl.movie.rating" placeholder="99" />
+      <div class="row">
+        <div class="input-field col s12">
+            <input id="movie_rating" class="validate" type="text" ng-model="$ctrl.movie.rating" />
+            <label for="movie_rating" >Rating</label>
         </div>
+      </div>
 
-        <div class="form-group">
-            <label>Website</label>
-            <input class="form-control" type="text" ng-model="$ctrl.movie.website" placeholder="http://imdb.com/title" />
+      <div class="row">
+        <div class="input-field col s12">
+            <label for="movie_website">Website</label>
+            <input id="movie_website" class="validate" type="text" ng-model="$ctrl.movie.website" />
         </div>
+      </div>
 
-        <div class="form-group">
-            <label for="exampleInputFile">Upload Cover Image</label>
+      <div class="row">
+        <div class="row input-field">
             <input type="file" id="exampleInputFile">
         </div>
+      </div>
 
-        <div class="form-group">
+      <div class="row">
+        <div class="input-field col s12">
             <button ng-click="$ctrl.save()" id="button1id" name="button1id" class="btn btn-success">Save</button>
             <button ng-click="$ctrl.reset()" id="button2id" name="button2id" class="btn">Clear</button>
         </div>
+      </div>
 
     </form>
 

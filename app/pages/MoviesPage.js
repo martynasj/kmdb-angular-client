@@ -8,21 +8,25 @@ function controller() {
 }
 
 const template = `
-        <div class="row">
+        <div id="movies-page" class="row">
 
-            <div class="col-sm-3">
+            <div class="col s3 sidebar" >
 
-                <a ng-link="['AddMovie']" class="btn btn-default" >Add movie</a>
+                <ul class="collection">
+                  <a ng-link="['AddMovie']" class="collection-item" ><i class="material-icons left">add</i>Add Movie</a>
+                </ul>
 
-                <div class="list-group">
-                   <a ng-repeat="movie in $ctrl.movies" ng-link="['MovieDetail', {id: movie.id}]" class="list-group-item">
+                <ul class="collection">
+                   <a ng-repeat="movie in $ctrl.movies" ng-link="['MovieDetail', {id: movie.id}]" class="collection-item">
                       {{movie.title}}
                     </a>
-                  </div>
+                  </ul>
             </div>
 
-            <div class="col-sm-9">
-            <ng-outlet></ng-outlet>
+            <div class="col s9">
+              <div class="container">
+                <ng-outlet></ng-outlet>
+              </div>
             </div>
         </div>
 

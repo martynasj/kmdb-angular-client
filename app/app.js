@@ -3,6 +3,7 @@
 
 import angular from 'angular';
 import ngComponentRouter from 'ngcomponentrouter';
+import './styles/main.scss';
 
 const app = angular.module('app', ['ngComponentRouter']);
 
