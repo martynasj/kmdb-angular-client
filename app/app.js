@@ -11,6 +11,4 @@ app.config(function($locationProvider) {
 });
 
 
-
 export default app;
-console.log('angular module crated');

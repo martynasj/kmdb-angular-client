@@ -2,7 +2,6 @@
  * Created by martynasjankauskas on 11/04/16.
  */
 import app from '../app';
-import template from './movieDetail.html';
 import { movieData } from '../dummyData';
 
 function controller() {
@@ -21,6 +20,12 @@ function controller() {
 
     };
 }
+
+const template = `
+  <div>
+    <pre>{{$ctrl.movie}}</pre>
+  </div>
+`;
 
 const movieDetail = app.component('movieDetail', {
     template,

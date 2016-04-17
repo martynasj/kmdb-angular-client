@@ -1,16 +1,22 @@
-console.log('in main layout');
 import app from './app';
-import template from './MainLayout.html';
-import TopBar from './components/topBar.js';
-import moviesPage from './pages/MoviesPage';
+import topBar from './components/topBar.js';
+import moviesPage from './pages/moviesPage';
+import homePage from './pages/homePage';
 
-app.value('$routerRootComponent', 'mainLayout');
+const template = `
+    <div>
+        <!-- Includes another component -->
+        <top-bar></top-bar>
+        <!-- Same as ng-view or ui-view from older router -->
+        <ng-outlet></ng-outlet>
+    </div>
+`;
 
 const MainLayout = app.component('mainLayout', {
     template,
     $routeConfig: [
-        {path: '/movies', name: 'AllMovies', component: 'moviePage'},
-        {path: '/movies/:id', name: 'MovieDetail', component: 'movieDetail'}
+        {path: '/', name: 'HomePage', component: 'homePage'},
+        {path: '/movies/...', name: 'AllMovies', component: 'moviesPage'}
     ]
 });
 
