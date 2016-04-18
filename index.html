@@ -1,43 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>KEA movie database</title>
+  <meta charset="UTF-8">
+  <title>KEA movie database</title>
 
-    <base href="/">
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-    <!-- Angular 1.5 minified -->
-    <script src="/node_modules/angular/angular.js"></script>
-    <!-- Angular 1.5 Component router -->
-    <script src="/node_modules/@angular/router/angular1/angular_1_router.js"></script>
-
-    <!-- Components -->
-    <script src="app/app.js"></script>
-    <script src="app/components/topBar.js"></script>
-    <script src="app/pages/moviePage.js"></script>
-    <script src="app/components/movieList.js"></script>
-    <script src="app/components/movieDetail.js"></script>
-    <script src="app/components/addMovie.js"></script>
+  <!-- This is needed for component router -->
+  <base href="/">
 
 
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="/node_modules/materialize-css/bin/materialize.css">
 
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
 <body ng-app="app">
-    <div class="container-fluid">
-        <app></app>
-    </div>
+  <main-layout></main-layout>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="/node_modules/materialize-css/bin/materialize.js"></script>
+  <!-- My compiled app -->
+  <script src="bundle.js"></script>
 
 </body>
-
 </html>

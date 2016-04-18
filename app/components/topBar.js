@@ -1,14 +1,28 @@
 /**
  * Created by martynasjankauskas on 10/04/16.
  */
+import app from '../app';
 
-angular.module('app')
+function controller() {
+  this.brand = 'KMDB';
+}
 
-.controller('TopBarController', function($scope) {
-   $scope.brand = 'KMDB'
-})
+const template = `
+<nav id="top-bar">
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="left">
+      <li><a class="navbar-brand" ng-link="['HomePage']" >{{$ctrl.brand}}</a></li>
+      <li><a ng-link="['AllMovies']">All Movies</a></li>
+      <li><a ng-link="['Tv']">Tv Series</a></li>
+    </ul>
+  </div>
+</nav>
 
-.component('topBar', {
-   templateUrl: 'app/components/topBar.html',
-   controller: "TopBarController"
-})
+`;
+
+const topBar = app.component('topBar', {
+  template,
+  controller
+});
+
+export default topBar;

@@ -1,26 +1,14 @@
-/**
- * Created by martynasjankauskas on 10/04/16.
- */
 
-angular.module('app', ['ngComponentRouter', 'moviePage'])
+// This is the first file that gets run. It creates the app module
+// All other components then build on this module
 
-// https://docs.angularjs.org/guide/component-router
-.config(function($locationProvider) {
+import angular from 'angular';
+import ngComponentRouter from 'ngcomponentrouter';
+
+const app = angular.module('app', ['ngComponentRouter']);
+
+app.config(function($locationProvider) {
     $locationProvider.html5Mode(true);
-})
-
-// Configure the top level routed App Component.
-.value('$routerRootComponent', 'app')
-
-.component('app', {
-    templateUrl: './app/app.html',
-    $routeConfig: [
-        {path: '/movies/...', name: 'Movies', component: 'moviePage'},
-        {path: '/movies/add', name: 'AddMovie', component: 'addMovie'},
-        {path: '/home', name: 'Home', component: 'home'},
-    ]
-})
-
-.component('home', {
-    templateUrl: '/app/pages/home.html'
 });
+
+export default app;
