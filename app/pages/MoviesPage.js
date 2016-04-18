@@ -1,10 +1,9 @@
 import app from '../app';
 import movieDetail from '../components/movieDetail';
 import addMovie from '../components/addMovie';
-import { movieData } from '../dummyData';
 
 function controller() {
-  this.movies = movieData;
+  this.movies = null;
 }
 
 const template = `

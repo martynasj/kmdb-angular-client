@@ -2,7 +2,8 @@
  * Created by martynasjankauskas on 11/04/16.
  */
 import app from '../app';
-import { movieData } from '../dummyData';
+
+const movieData = {};
 
 function controller() {
 

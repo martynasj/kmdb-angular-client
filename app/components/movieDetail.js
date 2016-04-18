@@ -2,23 +2,23 @@
  * Created by martynasjankauskas on 11/04/16.
  */
 import app from '../app';
-import { movieData } from '../dummyData';
 
 function controller() {
 
-    const $ctrl = this;
+  const $ctrl = this;
+  $ctrl.movieData = null;
 
     this.$routerOnActivate = function(next, previous) {
-        // Get the hero identified by the route parameter
-        var routeId = next.params.id;
+    // Get the hero identified by the route parameter
+    var routeId = next.params.id;
 
-        for (const movie of movieData) {
-            if (movie.id === routeId) {
-                $ctrl.movie = JSON.stringify(movie, null, 2);
-            }
-        }
+    for (const movie of $ctrl.movieData) {
+      if (movie.id === routeId) {
+        $ctrl.movie = JSON.stringify(movie, null, 2);
+      }
+    }
 
-    };
+  };
 }
 
 const template = `
@@ -28,8 +28,8 @@ const template = `
 `;
 
 const movieDetail = app.component('movieDetail', {
-    template,
-    controller
+  template,
+  controller
 });
 
 export default movieDetail;

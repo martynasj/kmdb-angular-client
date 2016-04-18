@@ -7,13 +7,11 @@ function controller($http, apiService) {
   ctrl.dataLoading = true;
 
   this.$onInit = function() {
-    console.log(apiService.getName());
-
-    const promise = apiService.getAllSeries();
-    promise.then(function(result) {
-      alert('Success: ' + result);
-    }, function(reason) {
-      alert('Failed: ' + result);
+    apiService.getAllSeries().then(function success(result) {
+      ctrl.allSeries = result;
+      ctrl.dataLoading = false;
+    }, function error(reason) {
+      console.log(reason);
     });
   };
 
