@@ -3,13 +3,11 @@
 
 import angular from 'angular';
 import ngComponentRouter from 'ngcomponentrouter';
-import './styles/main.scss';
 
 const app = angular.module('app', ['ngComponentRouter']);
 
 app.config(function($locationProvider) {
     $locationProvider.html5Mode(true);
 });
-
 
 export default app;

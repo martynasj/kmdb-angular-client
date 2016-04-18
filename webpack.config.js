@@ -6,8 +6,8 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: [
-        "./app/app.js",
-        "./app/MainLayout.js"
+        "./app/index.js",
+        "./app/app.js"
     ],
     output: {
         path: __dirname + '/build',
@@ -22,6 +22,7 @@ module.exports = {
                 include: __dirname + '/app',
                 loaders: ["style", "css", "sass"]
             },
+          { test: /\.json/, include: __dirname + '/app', loader: "file-loader" }
         ]
     },
 };

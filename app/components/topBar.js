@@ -13,6 +13,7 @@ const template = `
     <ul id="nav-mobile" class="left">
       <li><a class="navbar-brand" ng-link="['HomePage']" >{{$ctrl.brand}}</a></li>
       <li><a ng-link="['AllMovies']">All Movies</a></li>
+      <li><a ng-link="['Tv']">Tv Series</a></li>
     </ul>
   </div>
 </nav>
