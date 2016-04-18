@@ -15,7 +15,17 @@ app.service('apiService', function($q, $http) {
         reject(response);
       })
     });
-  }
+  };
+
+  this.getSeriesById = function(id) {
+    return $q(function(resolve, reject) {
+      $http.get(`http://localhost:3001/api/tv/${id}`).then(function success(response) {
+        resolve(response.data);
+      }, function error(response) {
+        reject(response);
+      });
+    });
+  };
 
 });
 

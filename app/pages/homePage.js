@@ -1,4 +1,6 @@
-import app from '../app';
+import angular from 'angular';
+
+const app = angular.module('app');
 
 function controller() {
 

@@ -1,8 +1,10 @@
-import app from './app';
-import topBar from './components/topBar.js';
-import moviesPage from './pages/moviesPage';
-import homePage from './pages/homePage';
-import tvPage from './pages/tvPage';
+import angular from 'angular';
+import topBar from './../components/topBar.js';
+import moviesPage from './moviesPage';
+import homePage from './homePage';
+import tvPage from './tv/tvPage';
+
+const app = angular.module('app');
 
 const template = `
     <div>

@@ -1,6 +1,8 @@
-import app from '../app';
+import angular from 'angular';
 import movieDetail from '../components/movieDetail';
 import addMovie from '../components/addMovie';
+
+const app = angular.module('app');
 
 function controller() {
   this.movies = null;
