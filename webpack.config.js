@@ -6,8 +6,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: [
-        "./app/index.js",
-        "./app/app.js"
+        "./app/index.js"
     ],
     output: {
         path: __dirname + '/build',
