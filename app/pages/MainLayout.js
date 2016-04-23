@@ -3,6 +3,8 @@ import topBar from './../components/topBar.js';
 import moviesPage from './moviesPage';
 import homePage from './homePage';
 import tvPage from './tv/tvPage';
+import addTvPage from './tv/addTvPage';
+import tvList from './tv/tvList';
 
 const app = angular.module('app');
 

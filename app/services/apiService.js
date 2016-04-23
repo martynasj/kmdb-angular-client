@@ -27,6 +27,18 @@ app.service('apiService', function($q, $http) {
     });
   };
 
+  this.addTvSeries = function(tvSeries) {
+    console.log('add tv series');
+    console.log(tvSeries);
+    return $q(function(resolve, reject) {
+      $http.post(`http://localhost:3001/api/tv/${id}`).then(function success(response) {
+        resolve(response.data);
+      }, function error(response) {
+        reject(response);
+      });
+    });
+  };
+
 });
 
 const apiService = {
