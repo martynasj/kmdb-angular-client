@@ -27,7 +27,7 @@ const template = `
               <div ng-if="$ctrl.dataLoading">Loading...</div>
               <div ng-if="$ctrl.error">No connection to the server</div>
               <div class="">
-                <div ng-repeat="series in $ctrl.allSeries" class="col s6 m4 l3">
+                <div ng-repeat="series in $ctrl.allSeries" class="col s6 m4">
                   <tv-card series="series"></tv-card>
                 </div>
               </div>

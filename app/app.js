@@ -1,5 +1,4 @@
-
-// This is the first file that gets run. It creates the app module
+// This creates the app module
 // All other components then build on this module
 
 import angular from 'angular';

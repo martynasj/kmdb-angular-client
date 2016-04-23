@@ -9,9 +9,11 @@ function controller($http, apiService) {
 }
 
 const template = `
-        <div id="tv-page" class="row">
-          <div class="col s12">
-            <ng-outlet></ng-outlet>
+        <div  id="tv-page" class="container">
+          <div class="row">
+            <div class="col s12">
+              <ng-outlet></ng-outlet>
+            </div>
           </div>
         </div>
 `;
