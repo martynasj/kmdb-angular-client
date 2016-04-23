@@ -7,16 +7,25 @@ function controller(apiService) {
 
   // filled with initial values for api testing
   $ctrl.tvSeries = {
-    title: 'The Office',
+    name: 'The Office',
     language: 'English',
-    genre: 'Comedy',
-    country: 'United States',
-    rating: 9,
+    genres: [
+      'Comedy'
+    ],
+    network: {
+      country: {
+        name: 'United States'
+      }
+    },
+    rating: {
+      average: 9
+    },
     summary: 'A mockumentary on a group of typical office workers...'
   };
 
   $ctrl.addTv = function() {
     apiService.addTvSeries($ctrl.tvSeries).then(function success(result) {
+      // redirect
       console.log(result);
     }, function error(error) {
       console.log(error);
@@ -37,7 +46,7 @@ const template = `
     <form id="tv-form" name="tvForm" novalidate>
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="The Office" id="title" type="text" ng-model="$ctrl.tvSeries.title" required>
+          <input placeholder="The Office" id="title" type="text" ng-model="$ctrl.tvSeries.name" required>
           <label class="active" for="title">Title</label>
         </div>
       </div>
@@ -49,19 +58,19 @@ const template = `
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="Comedy" id="genre" type="text" ng-model="$ctrl.tvSeries.genre" required>
+          <input placeholder="Comedy" id="genre" type="text" ng-model="$ctrl.tvSeries.genres[0]" required>
           <label class="active" for="genre">Genre</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="United States" id="country" type="text" ng-model="$ctrl.tvSeries.country">
+          <input placeholder="United States" id="country" type="text" ng-model="$ctrl.tvSeries.network.country.name">
           <label class="active" for="country">Country</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="9" id="rating" type="number" ng-model="$ctrl.tvSeries.rating" min="0" max="10">
+          <input placeholder="9" id="rating" type="number" ng-model="$ctrl.tvSeries.rating.average" min="0" max="10">
           <label class="active" for="rating">Rating</label>
         </div>
       </div>
